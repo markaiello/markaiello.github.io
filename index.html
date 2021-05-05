@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello Bulma!</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+    <link rel="stylesheet" href="css/chessboard-1.0.0.min.css">
+    
+    <script  src="node_modules/axios/dist/axios.js"></script>
+    <script src = "js/chess.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/chessboard-1.0.0.min.js"></script>
+    <script type="module" src = "myScript.js"></script>
+    
+
+</head>
+
+
+<body>
+
+
+
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a class="navbar-item" >
+            <img src="logo.jpg" width="40" height="112">
+          </a>
+      
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+      
+        <div id="navbarBasicExample" class="navbar-menu">
+          <div class="navbar-start">
+            <div class="navbar-item">
+                <div class="buttons">
+                  <a class="button is-primary">
+                    <strong>Sign up</strong>
+                  </a>
+                  <a class="button is-light">
+                    Log in
+                  </a>
+                </div>
+              </div>
+            </div>
+        </div>
+      </nav>
+
+    <br>
+    <br>                                                                                                                                                                                                                                                                                        
+    <div class = "columns is-centered">
+      <div id="board1" style="width: 560px"></div>
+      <a class="button is-primary modal-button" id = "newGameButton" data-target="#myModal" aria-haspopup="true" >Position Evaluator</a>
+      <a id = "evaluatePosition" class = "button">Evaluate this position</a>
+
+      <table id = "evaltable" class="table">
+        <thead>
+          <tr>
+            <th> Engine recommended moves for your position</th>
+          </tr>
+          <tbody id = "EngineEntry">
+          </tbody>
+        </thead>
+      </table>
+    </div>
+
+
+
+
+    
+
+    <div class="modal" id="myModal">
+      <div class="modal-background"></div>
+      <div class="modal-content">
+          <div class = "box">Would you like to play as the black or white pieces?</div>
+        <a id = "chooseWhite" class="button">White</a>
+        <a id = "chooseBlack" class="button">Black</a>
+      </div>
+      <button class="modal-close is-large" aria-label="close"></button>
+    </div>
+
+
+    
+
+
+  
+   
+
+    </body>

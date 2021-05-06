@@ -315,7 +315,7 @@ window.onload=function(){
             method: 'get',
             url: 'https://api.chess.com/pub/leaderboards',
           });
-          var arr = result.data.rapid
+          var arr = result.data.live_blitz
         }
         catch(error){
           console.log(error)

@@ -1,30 +1,49 @@
 <!DOCTYPE html>
 <head>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+    <title>P4wn login</title>
 
 <script type="module" src = "login.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script src="js/jquery.email-autocomplete.js"></script>
+
   
    
 
 </head>
 
 <body>
+ 
+<br>
+<br>
+<br>
+    
+  
 
-
-    <div class="container">
-    <div class="columns">
+<div class="container"> 
+    <div class="columns is-centered">
      <div class="column is-one-fifth">
     <label class = "label"> Email </label>
-    <input id="email" class="input is-primary" type="text" placeholder="Text input" >
+    <input id="email" class="input is-primary" type="email" placeholder="Text input" autocomplete="off" >
     <br>
     <label class = "label"> Password </label>
     <input id = "password" class="input is-primary" type="password" placeholder="Text input" >
     <br>
     <a id = "inputButton" class = "button" >login</a>
+    <br>
+    <br>
+    <br>
+    
+      <div class = "columns is-centered" id="status"></div>
+    
+
     </div>
     </div>
+   </div>
     </div>
+
+
 
 
     <!-- The core Firebase JS SDK is always required and must be listed first -->

@@ -1,5 +1,10 @@
 
 
+$( document ).ready(function() {
+  $("#email").emailautocomplete({
+  });
+  });
+
 $("#inputButton").on('click',function(){
 
     var usremail = document.getElementById("email").value
@@ -15,8 +20,10 @@ firebase.auth().createUserWithEmailAndPassword(usremail, usrpassword)
   // ...
 })
 .catch((error) => {
-  var errorCode = error.code;
-  var errorMessage = error.message;
+  var status = ''
+    status = error.message
+    $("#status").html(status)
+    console.log(error.message)
   // ..
 })
 })

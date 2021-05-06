@@ -10,7 +10,7 @@
     <script type="module" src = "myscript2.js"></script>
 </head>
 <body>
-    <nav class="navbar" role="navigation" aria-label="main navigation">
+    <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
           <a class="navbar-item" href = "index.html">
             <img src="logo.jpg" width="40" height="112" >
@@ -36,27 +36,44 @@
                   <a id = "logoutButton" class="button is-light">
                     Log out
                   </a>
+                 
                 </div>
               </div>
             </div>
         </div>
       </nav>
+      <box class = "box is-large">
+        <h1 class = "content is-large is-centered">P4wn: The Chess Tool</h1>
+      </box>
 
       <br>
       <br>
       <br>
 
       <div class = "columns is-centered">
-        <div id="board1" style="width: 560px"></div>
+        <div id="board1" style="width: 520px"></div>
+        <box class = "box">
         <label>Game Status:</label>
         <div id="status"></div>
+      </box>
+        
       </div>
       <br>
-      <br>
+
       <div class = "columns is-centered">
-        <a class = "button" href = "index.html">Quit</a>
-        <a id="yo" class = "button">Reset Game</a>
+        <div class="field is-grouped">
+          <p class="control">
+            <a class = "button" href = "index.html">Quit</a>
+          </p>
+          <p class="control">
+            <a id="yo" class = "button">Reset Game</a>
+          </p>
+        </div>
       </div>
+
+
+
+   
 
 
 

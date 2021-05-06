@@ -9,6 +9,8 @@ window.onload=function(){
   var myobj4 = document.getElementById("evaluateQuit");
   myobj4.style.display = "none";
 
+  getDailyLeaderboard();
+
 
 
   firebase.auth().onAuthStateChanged(function(user) {
@@ -131,6 +133,7 @@ window.onload=function(){
           removeEvaluateTable()
           removeEvaluateReset()
           removeEvaluateQuit()
+          removeplayertTable()
 
       })
 
@@ -145,6 +148,7 @@ window.onload=function(){
           removeEvaluateTable()
           removeEvaluateReset()
           removeEvaluateQuit()
+          removeplayertTable()
 
       })
 
@@ -303,7 +307,45 @@ window.onload=function(){
 
       }
 
-     
+
+
+      async function getDailyLeaderboard(){
+        try{
+          const result = await axios({
+            method: 'get',
+            url: 'https://api.chess.com/pub/leaderboards',
+          });
+          var arr = result.data.daily
+        }
+        catch(error){
+          console.log(error)
+        }
+
+
+        for(var i=0;i<10;i++){
+          var addname = arr[i].name;
+          var addscore = arr[i].score;
+
+          const myParent = document.createElement("tr")
+          var data = document.createElement("th")
+          data.innerText = addname + ' - ' + addscore;
+  
+          var x =  document.getElementById("playerEntry")
+          x.append(myParent);
+          myParent.append(data)
+        }
+      }
+
+      function removeplayertTable(){
+        var myobj = document.getElementById("playerTable");
+        if (myobj.style.display === "none") {
+          myobj.style.display = "block";
+        } else {
+          myobj.style.display = "none";
+        }
+      }
+
+
 
 
   }

@@ -1,3 +1,19 @@
+
+
+
+$( document ).ready(function() {
+  $("#email").emailautocomplete({
+  });
+  });
+
+
+
+
+
+
+
+
+
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
     } else {
@@ -24,8 +40,9 @@ firebase.auth().signInWithEmailAndPassword(usremail, usrpassword)
     // ...
   })
   .catch((error) => {
-    var errorCode = error.code;
-    var errorMessage = error.message;
+    var status = ''
+    status = error.message
+    $("#status").html(status)
     console.log(error.message)
   });
 })

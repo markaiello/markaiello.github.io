@@ -20,7 +20,7 @@
 
 
 
-    <nav class="navbar" role="navigation" aria-label="main navigation">
+    <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
           <a class="navbar-item" href = "index.html">
             <img src="logo.jpg" width="40" height="112" >
@@ -46,16 +46,44 @@
                   <a id = "logoutButton" class="button is-light">
                     Log out
                   </a>
+                  <br>
+                  
                 </div>
               </div>
             </div>
         </div>
       </nav>
+      <box class = "box is-large">
+        <h1 class = "content is-large is-centered">P4wn: The Chess Tool</h1>
+      </box>
 
     <br>
     <br>                                                                                                                                                                                                                                                                                        
     <div class = "columns is-centered">
-      <div id="board1" style="width: 560px"></div>
+
+      <table id = "playerTable" class="table">
+        <thead>
+          <tr>
+            <th> Top Chess.com players by rating</th>
+          </tr>
+          <tbody id = "playerEntry">
+          </tbody>
+        </thead>
+      </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <div id="board1" style="width: 500px"></div>
       <a id = "evaluatePosition" class = "button">Evaluate this position</a>
      
 
@@ -70,17 +98,40 @@
       </table>
     </div>
     <br>
+
     <div class = "columns is-centered">
-      <a id = "evalBoardReset" class = "button"> Reset Board</a>
-      <a id = "evaluateQuit" class = "button" href = "index.html">Quit</a>
+      <div class="field is-grouped">
+        <p class="control">
+          <a id = "evalBoardReset" class = "button"> Reset Board</a>
+        </p>
+        <p class="control">
+           <a id = "evaluateQuit" class = "button" href = "index.html">Quit</a>
+        </p>
+      </div>
     </div>
+
+
+
+  
+  
     <br>
+
     <div class = "columns is-centered">
-      <a class="button is-primary modal-button" id = "newGameButton" data-target="#myModal" aria-haspopup="true">Position Evaluator</a>
-      <a id = "playWithYourself" class = "button" href = "index2.html"> Play Against Yourself</a>
-      <a id = "puzzleButton" class = "button" href = "index3.html"> Checkmate Puzzles</a>
-      
+    <div class="field is-grouped">
+      <p class="control">
+        <a class="button is-primary modal-button" id = "newGameButton" data-target="#myModal" aria-haspopup="true">Position Evaluator</a>
+      </p>
+      <p class="control">
+        <a id = "playWithYourself" class = "button is-primary" href = "index2.html"> Play Against Yourself</a>
+      </p>
+      <p class="control">
+        <a id = "puzzleButton" class = "button is-primary" href = "index3.html"> Checkmate Puzzles</a>
+      </p>
     </div>
+  </div>
+
+  
+   
 
 
 

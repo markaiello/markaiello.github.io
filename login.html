@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+
+<script type="module" src = "login.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  
+   
+
+</head>
+
+<body>
+
+
+    <div class="container">
+    <div class="columns">
+     <div class="column is-one-fifth">
+    <label class = "label"> Email </label>
+    <input id="email" class="input is-primary" type="text" placeholder="Text input" >
+    <br>
+    <label class = "label"> Password </label>
+    <input id = "password" class="input is-primary" type="password" placeholder="Text input" >
+    <br>
+    <a id = "inputButton" class = "button" >login</a>
+    </div>
+    </div>
+    </div>
+
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-auth.js"></script>
+
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyCR5pLbPHOJMitGdxmXi-qtwh_26Rzlvgg",
+    authDomain: "comp426-24ee1.firebaseapp.com",
+    projectId: "comp426-24ee1",
+    storageBucket: "comp426-24ee1.appspot.com",
+    messagingSenderId: "395983623592",
+    appId: "1:395983623592:web:e61f02e2c512521e25b99d",
+    measurementId: "G-W41Q48GTVF"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>

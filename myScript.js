@@ -2,10 +2,45 @@
 window.onload=function(){
   var myobj = document.getElementById("evaluatePosition");
   myobj.style.display = "none";
-
   var myobj2 = document.getElementById("evaltable");
   myobj2.style.display = "none";
+  var myobj3 = document.getElementById("evalBoardReset");
+  myobj3.style.display = "none";
+  var myobj4 = document.getElementById("evaluateQuit");
+  myobj4.style.display = "none";
 
+
+
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+        var myobjy = document.getElementById("loginButton");
+        myobjy.style.display = "none";
+
+        var myobja = document.getElementById("signupbutton");
+        myobja.style.display = "none";
+
+        var data = document.createElement("p")
+        data.innerText = 'User: ' + user.email
+
+        var x =  document.getElementById("topbar")
+        x.append(data);
+
+    } else {
+      var myobj4 = document.getElementById("logoutButton");
+      myobj4.style.display = "none";
+    }
+  });
+
+
+  $("#logoutButton").on('click',function(){
+    firebase.auth().signOut().then(() => {
+      window.location = 'index.html'
+      // Sign-out successful.
+    }).catch((error) => {
+      // An error happened.
+    });
+  })
+  
   
 
   function onDragStart (source, piece, position, orientation) {
@@ -94,6 +129,8 @@ window.onload=function(){
           removeNewGameButton();
           removeEvaluateButton();
           removeEvaluateTable()
+          removeEvaluateReset()
+          removeEvaluateQuit()
 
       })
 
@@ -106,6 +143,8 @@ window.onload=function(){
           removeNewGameButton();
           removeEvaluateButton();
           removeEvaluateTable()
+          removeEvaluateReset()
+          removeEvaluateQuit()
 
       })
 
@@ -131,6 +170,17 @@ window.onload=function(){
 
       
 
+      
+
+      function removeEvaluateQuit(){
+        var myobj = document.getElementById("evaluateQuit");
+        if (myobj.style.display === "none") {
+          myobj.style.display = "block";
+        } else {
+          myobj.style.display = "none";
+        }
+      }
+
 
       function removeEvaluateButton(){
         var myobj = document.getElementById("evaluatePosition");
@@ -143,6 +193,15 @@ window.onload=function(){
 
       function removeEvaluateTable(){
         var myobj = document.getElementById("evaltable");
+        if (myobj.style.display === "none") {
+          myobj.style.display = "block";
+        } else {
+          myobj.style.display = "none";
+        }
+      }
+
+      function removeEvaluateReset(){
+        var myobj = document.getElementById("evalBoardReset");
         if (myobj.style.display === "none") {
           myobj.style.display = "block";
         } else {
@@ -166,6 +225,8 @@ window.onload=function(){
 
       $("#evaluatePosition").on('click', async function(){
         var fen = parse(game.fen())
+        
+        try{
         const result = await axios({
           method: 'get',
           url: 'https://lichess.org/api/cloud-eval',
@@ -181,8 +242,23 @@ window.onload=function(){
 
 
         addMovestoList(a)
+      }
+      catch(error){
+        var x =  document.getElementById("EngineEntry")
+        x.innerHTML = ''
+        nomovesfound()
+      }
 
-        
+       
+ 
+      })
+
+      $("#evalBoardReset").on('click',function(){
+        var x =  document.getElementById("EngineEntry")
+        x.innerHTML = ''
+          game.reset()
+          board.position('start')
+          updateStatus()
       })
 
 
@@ -213,6 +289,17 @@ window.onload=function(){
       }
 
 
+
+      }
+
+      function nomovesfound(){
+        const myParent = document.createElement("tr")
+        var data = document.createElement("th")
+        data.innerText = 'Your position does not appear in the Lichess openings database'
+
+        var x =  document.getElementById("EngineEntry")
+        x.append(myParent);
+        myParent.append(data)
 
       }
 

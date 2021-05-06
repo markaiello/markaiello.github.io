@@ -104,6 +104,8 @@ var dauser;
     
    function updateScore(){
 
+    
+   
     const dbRef = firebase.database();
     dbRef.ref('users/' + dauser.uid + '/score').get().then((snapshot) => {
       if (snapshot.exists()) {
@@ -113,17 +115,16 @@ var dauser;
         var y = document.getElementById("score") 
         y.innerText =''
         y.innerText += x
-
-
-
       } else {
         console.log("No data available");
       }
     }).catch((error) => {
       console.error(error);
     });
+  
 
-   }
+
+  }
 
 
 
@@ -178,8 +179,9 @@ var dauser;
       if (game.in_checkmate()) {
         status = 'Game over, ' + moveColor + ' is in checkmate.'
 
-
-
+       
+        if(dauser !== undefined){
+          console.log(dauser)
         const dbRef = firebase.database();
         dbRef.ref('users/' + dauser.uid + '/score').get().then((snapshot) => {
           if (snapshot.exists()) {
@@ -193,6 +195,7 @@ var dauser;
         });
 
         updateScore();
+      }
 
       }
       else{

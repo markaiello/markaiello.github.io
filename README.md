@@ -1,5 +1,5 @@
 # markaiello.github.io
-Comp 426 Final Project
+Comp 426 Final Project:
   Mark Aiello
   
 Achievements Completed:

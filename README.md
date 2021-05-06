@@ -18,10 +18,10 @@ Achievements Completed:
   - Used Chess.js to handle detecting legal moves, as well as when checkmates or draws have been acheived
   
   - Using these libraries I implemented 3 mini-games:
-        - Position analyzer: Will analyze any position as long as it occurs in the Lichess database and return a list of the most common moves played in high level           games
-        - Play Against yourself: A mini game which flips the board orientation after each move is played and allows the user to play as both colors
-        - Puzzles: Loads a random checkmate in one puzzle from a list, and loads it onto the board. The user is then allowed one move to achieve checkmate,
-                   if they can't they are alerted, and given an option to try that puzzle again, when a user is logged in, their lifetime # of puzzles solved will                      be stored in a firebase database, and displayed on the screen
+  - Position analyzer: Will analyze any position as long as it occurs in the Lichess database and return a list of the most common moves played in high level           games
+  - Play Against yourself: A mini game which flips the board orientation after each move is played and allows the user to play as both colors
+  - Puzzles: Loads a random checkmate in one puzzle from a list, and loads it onto the board. The user is then allowed one move to achieve checkmate,
+    if they can't they are alerted, and given an option to try that puzzle again, when a user is logged in, their lifetime # of puzzles solved will                      be stored in a firebase database, and displayed on the screen
              
 
 
